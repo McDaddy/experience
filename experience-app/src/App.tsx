@@ -1,10 +1,18 @@
-import * as React from "react";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import * as React from 'react';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { PageContainer } from './page-container';
+
+import 'antd/dist/antd.css';
 
 function BasicExample() {
   return (
     <Router>
-      <div>
+      <PageContainer>
+        <Route exact={true} path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/topics" component={Topics} />
+      </PageContainer>
+      {/* <div>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -20,8 +28,8 @@ function BasicExample() {
         <Route exact={true} path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/topics" component={Topics} />
-      </div>
-    </Router>
+      </div>; */}
+    </Router >
   );
 }
 
