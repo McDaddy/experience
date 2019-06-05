@@ -32,18 +32,23 @@ class PageContainer extends React.PureComponent<IProps, any> {
               mode="inline"
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
+              selectedKeys={['/experience/react-hooks/hook-useRef']}
             >
               <SubMenu
                 key="sub1"
                 title={
                   <span>
                     <Icon type="laptop" />
-                    test
+                    React Hooks
                   </span>
                 }
               >
-                <Menu.Item key="1"><Link to="/about">about</Link></Menu.Item>
-                <Menu.Item key="2"><Link to="/topics">Topics</Link></Menu.Item>
+                <Menu.Item key="/experience/react-hooks/hook-closure">
+                  <Link to="/experience/react-hooks/hook-closure">Hooks与闭包</Link>
+                </Menu.Item>
+                <Menu.Item key="/experience/react-hooks/hook-useRef">
+                  <Link to="/experience/react-hooks/hook-useRef">useRef</Link>
+                </Menu.Item>
               </SubMenu>
               {/* <SubMenu
                 key="sub2"

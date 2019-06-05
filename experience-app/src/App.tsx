@@ -1,16 +1,28 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import { PageContainer } from './page-container';
+import { HookClosure } from './react-hooks/hook-closure';
+import { CounterRef } from './react-hooks/hook-useRef';
 
 import 'antd/dist/antd.css';
 
 function BasicExample() {
   return (
-    <Router>
+    <Router basename="/experience">
       <PageContainer>
-        <Route exact={true} path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/topics" component={Topics} />
+        <Route exact={true} path="/experience" component={Home} />
+        <Route path="/experience/react-hooks" component={About}>
+          <Switch>
+            <Route
+              path="/experience/react-hooks/hook-closure"
+              component={HookClosure}
+            />
+            <Route
+              path="/experience/react-hooks/hook-useRef"
+              component={CounterRef}
+            />
+          </Switch>
+        </Route>
       </PageContainer>
       {/* <div>
         <ul>
@@ -29,7 +41,7 @@ function BasicExample() {
         <Route path="/about" component={About} />
         <Route path="/topics" component={Topics} />
       </div>; */}
-    </Router >
+    </Router>
   );
 }
 
